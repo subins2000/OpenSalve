@@ -13,6 +13,10 @@ After cloning the repo,
   ```bash
   . env/bin/activate
   ```
+* Install dependencies :
+  ```bash
+  npm install
+  ```
 
 ## Contributing
 
