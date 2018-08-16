@@ -13,3 +13,8 @@ After cloning the repo,
   ```bash
   . env/bin/activate
   ```
+
+## Contributing
+
+* Follow the [StandardJS Coding Standards](https://github.com/standard/standard#standardjs-the-rules)
+* Use meaningful commit messages
