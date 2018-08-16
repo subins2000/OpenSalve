@@ -18,3 +18,4 @@ After cloning the repo,
 
 * Follow the [StandardJS Coding Standards](https://github.com/standard/standard#standardjs-the-rules)
 * Use meaningful commit messages
+* Document things as necessary
