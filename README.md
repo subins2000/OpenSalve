@@ -17,6 +17,10 @@ After cloning the repo,
   ```bash
   npm install
   ```
+* Start server :
+  ```bash
+  npm start
+  ```
 
 ## Contributing
 
