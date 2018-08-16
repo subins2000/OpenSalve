@@ -1,0 +1,6 @@
+"*":
+  editor: {
+    tabLength: 2
+  }
+  "bracket-matcher":
+    autocompleteBrackets: true
