@@ -22,17 +22,11 @@ var bodyParser = require('body-parser')
 app.use(bodyParser.urlencoded({ extended: true }))
 app.use(bodyParser.json())
 
-var router = express.Router()
+var apiIndexRouter = require('./app/api/index.js')(config)
+var helpRouter = require('./app/api/help.js')(config)
 
-// return name and API version
-router.get('/', function (req, res) {
-  res.json({
-    'name': config.name,
-    'version': config.version
-  })
-})
-
-app.use('/api', router)
+app.use('/api', apiIndexRouter)
+app.use('/api/help', helpRouter)
 
 app.listen(port)
 console.log('Server started on http://localhost:' + port + '/')
