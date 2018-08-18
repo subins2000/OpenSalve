@@ -10,8 +10,8 @@ module.exports = function (config) {
   // return name and API version
   router.get('/', function (req, res) {
     res.json({
-      'name': config.name,
-      'version': config.version
+      'name': config.manifest.name,
+      'version': config.manifest.version
     })
   })
 

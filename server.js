@@ -4,10 +4,25 @@
  */
 
 /**
- * OpenSalve config
+ * Database config
  * @private
  */
-var config = require('./config.js')
+var dbConfig = require('./config/database.js')
+
+/**
+ * Manifest config
+ * @private
+ */
+var manifestConfig = require('./config/manifest.json')
+
+/**
+ * Combined config
+ * @private
+ */
+var config = {
+  manifest: manifestConfig,
+  db: dbConfig
+}
 
 /**
  * Port to listen
