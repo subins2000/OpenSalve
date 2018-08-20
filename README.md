@@ -30,6 +30,6 @@ After cloning the repo,
 
 ## Contributing
 
-* Follow the [StandardJS Coding Standards](https://github.com/standard/standard#standardjs-the-rules)
+* Follow the [PEP 8 Coding Standards](https://www.python.org/dev/peps/pep-0008/)
 * Use meaningful commit messages
 * Document things as necessary
