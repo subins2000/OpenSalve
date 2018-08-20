@@ -4,22 +4,28 @@
 
 After cloning the repo,
 
-* Install [nodeenv](https://github.com/ekalinin/nodeenv#install)
-* Setup environment :
+* Install `pip` and [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/) :
+  ```
+  sudo apt-get install python3-pip
+  pip3 install virtualenvwrapper
+  ```
+* Clone repo
+* With the repo folder as the present working directory, setup the environment :
   ```bash
-  nodeenv --node=10.9.0 --requirement=requirements.txt env
+  VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3 source ~/.local/bin/virtualenvwrapper.sh
+  WORKON_HOME=. mkvirtualenv env
   ```
 * Activate environment :
   ```bash
-  . env/bin/activate
+  source env/bin/activate
   ```
 * Install dependencies :
   ```bash
-  npm install
+  pip install -r requirements.txt
   ```
 * Start server :
   ```bash
-  npm start
+  python3 manage.py runserver
   ```
 
 ## Contributing
