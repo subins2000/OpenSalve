@@ -4,24 +4,28 @@
 
 After cloning the repo,
 
-* Install `pip` and [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/) :
-  ```
-  sudo apt-get install python3-pip
-  pip3 install virtualenvwrapper
-  ```
-* Clone repo
+* Setup [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/)
 * With the repo folder as the present working directory, setup the environment :
   ```bash
-  VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3 source ~/.local/bin/virtualenvwrapper.sh
-  WORKON_HOME=. mkvirtualenv env
+  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
+  source ~/.local/bin/virtualenvwrapper.sh # Better add this to .bashrc
+  mkvirtualenv opensalve
+  rm $VIRTUAL_ENV/bin/postactivate
+  ln -s `realpath .env/postactivate` $VIRTUAL_ENV/bin/postactivate
   ```
+* Edit file `.env/postactivate` and set `SECRET_KEY`, database config
 * Activate environment :
   ```bash
-  source env/bin/activate
+  source ~/.local/bin/virtualenvwrapper.sh # Better add this to .bashrc
+  workon opensalve
   ```
 * Install dependencies :
   ```bash
   pip install -r requirements.txt
+  ```
+* Open file `env/bin/postactivate` and set secret key :
+  ```bash
+  export DJANGO_SECRET_KEY = 'a_random_key_here'
   ```
 * Start server :
   ```bash
