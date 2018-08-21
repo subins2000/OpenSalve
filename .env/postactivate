@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+# Generate using https://gist.github.com/ndarville/3452907#gistcomment-1172571
+export DJANGO_SECRET_KEY='key here'
