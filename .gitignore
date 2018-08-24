@@ -2,6 +2,7 @@
 *.sqlite3
 env
 node_modules
+workspace.sh
 
 # ------
 # Python
