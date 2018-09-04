@@ -22,5 +22,6 @@ from opensalve.views import index
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', index),
+    path('api/accounts/', include('accounts.urls')),
     path('api/help/', include('help.urls')),
 ]
