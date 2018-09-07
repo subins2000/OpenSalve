@@ -6,3 +6,7 @@ class Users(User):
 
     name = models.CharField(max_length=60)
     created_at = models.DateTimeField(auto_now_add=True)
+    role = models.CharField(
+        max_length=10,
+        null=True
+    )
