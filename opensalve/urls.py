@@ -14,18 +14,33 @@ Including another URLconf
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
 from django.contrib import admin
+from django.conf.urls import url
 from django.urls import include, path
-from rest_framework_swagger.views import get_swagger_view
+from drf_yasg.views import get_schema_view
+from drf_yasg import openapi
 
 from opensalve.views import index
 
 
-schema_view = get_swagger_view(title='OpenSalve API')
+schema_view = get_schema_view(
+    openapi.Info(
+        title='OpenSalve API',
+        default_version='v0.1',
+        description='OpenSalve API https://github.com/subins2000/OpenSalve',
+        license=openapi.License(name='GPL-3.0'),
+    ),
+    validators=['flex', 'ssv'],
+    public=True,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', index),
     path('api/accounts/', include('accounts.urls')),
     path('api/help/', include('help.urls')),
-    path('docs', schema_view),
+    url(
+        '^docs/$',
+        schema_view.with_ui('swagger', cache_timeout=0),
+        name='schema-swagger-ui'
+    ),
 ]
