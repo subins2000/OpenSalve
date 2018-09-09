@@ -19,7 +19,7 @@ After cloning the repo,
   source ~/.local/bin/virtualenvwrapper.sh # Better add this to .bashrc
   workon opensalve
   ```
-* Install dependencies :
+* Install dependencies (`pip install Django djangorestframework drf-yasg flex swagger_spec_validator`) :
   ```bash
   pip install -r requirements.txt
   ```
