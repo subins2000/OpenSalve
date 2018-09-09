@@ -15,13 +15,17 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import include, path
+from rest_framework_swagger.views import get_swagger_view
 
 from opensalve.views import index
 
+
+schema_view = get_swagger_view(title='OpenSalve API')
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('api/', index),
     path('api/accounts/', include('accounts.urls')),
     path('api/help/', include('help.urls')),
+    path('docs', schema_view),
 ]
