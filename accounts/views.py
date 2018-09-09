@@ -11,12 +11,16 @@ from accounts.serializers import UsersSerializer
 
 
 class UsersRegister(CreateAPIView):
+    """post: Register a user
+    """
 
     queryset = Users.objects.all()
     serializer_class = UsersSerializer
 
 
 class UsersLogin(APIView):
+    """Login user
+    """
 
     authentication_classes = (BasicAuthentication,)
     permission_classes = (IsAuthenticated,)
