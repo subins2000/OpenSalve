@@ -49,3 +49,26 @@ After cloning the repo,
     - [ ] Status of request
     - [ ] Comments on request
     - [ ] Visualize request in maps
+
+## API Docs
+
+Use an interactive API documentation from [/docs](http://127.0.0.1:8000/docs) after setting up OpenSalve locally on `http://127.0.0.1:8000`.
+
+Steps to generate static API docs :
+
+* Install `spectacle-docs` :
+  ```bash
+  npm install -g spectacle-docs
+  ```
+* Save the OpenAPI in JSON format to `api.json` file (where `http://127.0.0.1:8000` is where OpenSalve is running) :
+  ```
+  curl http://127.0.0.1:8000/docs/?format=openapi > api.json
+  ```
+* Generate docs :
+  ```
+  spectacle-docs api.json -t docs
+  ```
+* Cleanup :
+  ```
+  rm api.json
+  ```
