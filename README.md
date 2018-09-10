@@ -54,6 +54,8 @@ After cloning the repo,
 
 Use an interactive API documentation from [/docs](http://127.0.0.1:8000/docs) after setting up OpenSalve locally on `http://127.0.0.1:8000`.
 
+Or use [the online API docs](https://lab.subinsb.com/OpenSalve/).
+
 Steps to generate static API docs :
 
 * Install `spectacle-docs` :
