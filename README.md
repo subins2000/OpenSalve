@@ -25,7 +25,11 @@ After cloning the repo,
   ```
 * Open file `env/bin/postactivate` and set secret key :
   ```bash
-  export DJANGO_SECRET_KEY = 'a_random_key_here'
+  export DJANGO_SECRET_KEY='a_random_key_here'
+  ```
+* Migrate :
+  ```bash
+  python3 manage.py makemigrations && python3 manage.py migrate
   ```
 * Start server :
   ```bash
