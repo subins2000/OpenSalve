@@ -23,7 +23,7 @@ After cloning the repo,
   ```bash
   pip install -r requirements.txt
   ```
-* Open file `env/bin/postactivate` and set secret key :
+* Open file `.env/bin/postactivate` and set secret key :
   ```bash
   export DJANGO_SECRET_KEY='a_random_key_here'
   ```
