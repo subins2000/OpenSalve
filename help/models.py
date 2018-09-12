@@ -41,3 +41,8 @@ class Requests(models.Model):
     need_food = models.BooleanField(default=False)
     need_medicine = models.BooleanField(default=False)
     need_rescue = models.BooleanField(default=False)
+
+    status = models.CharField(
+        max_length=15,
+        help_text='Status of request'
+    )
