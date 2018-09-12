@@ -49,6 +49,7 @@ After cloning the repo,
     - [ ] User Roles
 - [ ] Help Requests
     - [x] Register request
+    - [x] Get request complete info
     - [ ] Resolve request
     - [ ] Status of request
     - [ ] Comments on request
