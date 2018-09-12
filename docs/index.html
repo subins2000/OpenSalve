@@ -64,9 +64,24 @@
           <!-- </li> -->
           <!-- </ul>
               </section> -->
+          <!-- <section>
+                <a href="#path--api-help-r--id--status">/api/help/r/{id}/status</a>
+                <ul> -->
+          <!-- <li> -->
+          <a href="#operation--api-help-r--id--status-get"> GET /api/help/r/{id}/status </a>
+          <!-- </li> -->
+          <!-- <li> -->
+          <a href="#operation--api-help-r--id--status-put"> PUT /api/help/r/{id}/status </a>
+          <!-- </li> -->
+          <!-- <li> -->
+          <a href="#operation--api-help-r--id--status-patch"> PATCH /api/help/r/{id}/status </a>
+          <!-- </li> -->
+          <!-- </ul>
+              </section> -->
           <h5>Schema Definitions</h5>
           <a href="#definition-Users"> Users </a>
           <a href="#definition-Requests"> Requests </a>
+          <a href="#definition-StatusRequests"> StatusRequests </a>
         </nav>
       </div>
       <div id="docs" class="row collapse expanded drawer" data-drawer>
@@ -386,7 +401,8 @@
   <span class="hljs-attr">&quot;request_for_others&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_food&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_medicine&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -425,7 +441,8 @@
   <span class="hljs-attr">&quot;request_for_others&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_food&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_medicine&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -463,7 +480,7 @@
                     <div class="prop-name">
                       <div class="prop-title">id:
                         <span class="prop-type">
-                          <span class="json-property-type">integer</span>
+                          <span class="json-property-type">string</span>
                           <span class="json-property-range" title="Value limits"></span>
                         </span>
                       </div>
@@ -471,7 +488,7 @@
                       <div class="prop-subtitle"> in path </div>
                     </div>
                     <div class="prop-value">
-                      <p>Unique ID of request</p>
+                      <p class="no-description">(no description)</p>
                     </div>
                   </div>
                 </section>
@@ -510,7 +527,284 @@
   <span class="hljs-attr">&quot;request_for_others&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_food&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_medicine&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <span id="path--api-help-r--id--status"></span>
+          <div id="operation--api-help-r--id--status-get" class="operation panel" data-traverse-target="operation--api-help-r--id--status-get">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-api">api</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-name">
+                <span class="operation-name">GET</span>
+                <span class="operation-path">/api/help/r/{id}/status</span>
+              </span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Get status of request</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">id:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <span class="json-property-required"></span>
+                      <div class="prop-subtitle"> in path </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples"></div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/StatusRequests">StatusRequests</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value"> </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="operation--api-help-r--id--status-put" class="operation panel" data-traverse-target="operation--api-help-r--id--status-put">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-api">api</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-name">
+                <span class="operation-name">PUT</span>
+                <span class="operation-path">/api/help/r/{id}/status</span>
+              </span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Get/Set status of request</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/StatusRequests">StatusRequests</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>undefined</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">id:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <span class="json-property-required"></span>
+                      <div class="prop-subtitle"> in path </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/StatusRequests">StatusRequests</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value"> </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="operation--api-help-r--id--status-patch" class="operation panel" data-traverse-target="operation--api-help-r--id--status-patch">
+            <!-- <section class="operation-tags row"> -->
+            <!-- <div class="doc-copy"> -->
+            <div class="operation-tags">
+              <a class="label" href="#tag-api">api</a>
+              <!---->
+            </div>
+            <!-- </div> -->
+            <!-- </section> -->
+            <h2 class="operation-title">
+              <span class="operation-name">
+                <span class="operation-name">PATCH</span>
+                <span class="operation-path">/api/help/r/{id}/status</span>
+              </span>
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-operation-description">
+                  <p>Set status of request</p>
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-request-body">
+                  <div class="prop-row">
+                    <div class="prop-name">
+                      <div class="swagger-request-model">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/StatusRequests">StatusRequests</a>
+                        </span>
+                      </div>
+                    </div>
+                    <div class="prop-value columns small-6">
+                      <!-- <div class="swagger-request-description"> -->
+                      <p>undefined</p>
+                      <!-- </div> -->
+                    </div>
+                  </div>
+                </section>
+                <section class="swagger-request-params">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">id:
+                        <span class="prop-type">
+                          <span class="json-property-type">string</span>
+                          <span class="json-property-range" title="Value limits"></span>
+                        </span>
+                      </div>
+                      <span class="json-property-required"></span>
+                      <div class="prop-subtitle"> in path </div>
+                    </div>
+                    <div class="prop-value">
+                      <p class="no-description">(no description)</p>
+                    </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Request Example</h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="swagger-responses">
+                  <div class="prop-row prop-group">
+                    <div class="prop-name">
+                      <div class="prop-title">200 OK</div>
+                      <div class="prop-ref">
+                        <span class="">
+                          <a class="json-schema-ref" href="#/definitions/StatusRequests">StatusRequests</a>
+                        </span>
+                      </div>
+                      <!-- <span class="swagger-global"></span> <span class="json-schema-reference"><a href=""></a></span> -->
+                    </div>
+                    <div class="prop-value"> </div>
+                  </div>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Response Example
+                    <span>(200 OK)</span>
+                  </h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
@@ -679,6 +973,16 @@
                       <span class="json-property-type">boolean</span>
                       <span class="json-property-range" title="Value limits"></span>
                     </dt>
+                    <dt data-property-name="status" class="has-description">
+                      <span class="json-property-name">status:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-range" title="String length limits"> (1 to 15 chars) </span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Status of request</p>
+                    </dd>
                   </dl>
                 </section>
               </div>
@@ -695,7 +999,47 @@
   <span class="hljs-attr">&quot;request_for_others&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_food&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
   <span class="hljs-attr">&quot;need_medicine&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
-  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>
+  <span class="hljs-attr">&quot;need_rescue&quot;</span>: <span class="hljs-string">&quot;boolean&quot;</span>,
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
+}
+</code></pre>
+                  <!-- </div> -->
+                </section>
+              </div>
+            </div>
+          </div>
+          <div id="definition-StatusRequests" class="definition panel" data-traverse-target="definition-StatusRequests">
+            <h2 class="panel-title">
+              <a name="/definitions/StatusRequests"></a>StatusRequests: object
+              <!-- <span class="json-property-type">
+              <span class="json-property-type">object</span>
+              <span class="json-property-range" title="Value limits"></span>
+              
+              
+              </span> -->
+            </h2>
+            <div class="doc-row">
+              <div class="doc-copy">
+                <section class="json-schema-properties">
+                  <dl>
+                    <dt data-property-name="status" class="has-description">
+                      <span class="json-property-name">status:</span>
+                      <span class="json-property-type">string</span>
+                      <span class="json-property-range" title="Value limits"></span>
+                      <span class="json-property-range" title="String length limits"> (1 to 15 chars) </span>
+                      <span class="json-property-required"></span>
+                    </dt>
+                    <dd>
+                      <p>Status of request</p>
+                    </dd>
+                  </dl>
+                </section>
+              </div>
+              <div class="doc-examples">
+                <section>
+                  <h5>Example</h5>
+                  <!-- <div class="hljs"> --><pre><code class="hljs lang-json">{
+  <span class="hljs-attr">&quot;status&quot;</span>: <span class="hljs-string">&quot;string&quot;</span>
 }
 </code></pre>
                   <!-- </div> -->
