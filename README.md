@@ -73,9 +73,15 @@ Steps to generate static API docs :
   ```
 * Generate docs :
   ```
-  spectacle-docs api.json -t docs
+  spectacle api.json -t docs
   ```
 * Cleanup :
   ```
   rm api.json
   ```
+
+Or use this one liner :
+
+```bash
+curl http://127.0.0.1:8000/docs/?format=openapi > api.json && spectacle api.json -t docs && rm api.json
+```
