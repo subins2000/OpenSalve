@@ -9,3 +9,11 @@ class RequestsSerializer(serializers.ModelSerializer):
 
         model = Requests
         fields = '__all__'
+
+
+class StatusRequestsSerializer(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Requests
+        fields = ('status',)
