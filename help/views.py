@@ -6,11 +6,11 @@ from help.permissions import IsVolunteer
 from help.serializers import StatusRequestsSerializer, RequestsSerializer
 
 
-class AddRequest(generics.CreateAPIView):
+class RequestAdd(generics.CreateAPIView):
     serializer_class = RequestsSerializer
 
 
-class ViewRequest(generics.RetrieveAPIView):
+class RequestView(generics.RetrieveAPIView):
     """Get info about a help request
     """
     serializer_class = RequestsSerializer
@@ -23,7 +23,7 @@ class ViewRequest(generics.RetrieveAPIView):
         return request
 
 
-class StatusRequest(generics.RetrieveUpdateAPIView):
+class RequestStatus(generics.RetrieveUpdateAPIView):
     """Get/Set status of request
     get:
     Get status of request
