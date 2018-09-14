@@ -3,6 +3,7 @@
 env
 node_modules
 workspace.sh
+.mypy_cache
 
 # ------
 # Python
