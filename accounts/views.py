@@ -2,7 +2,7 @@ from django.shortcuts import render
 from rest_framework.authentication import BasicAuthentication
 from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
-from rest_framework.generics import CreateAPIView
+from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
 from rest_framework.views import APIView
 
@@ -37,3 +37,23 @@ class UsersLogin(APIView):
         }
 
         return Response(content)
+
+
+class UsersEdit(RetrieveUpdateAPIView):
+    """Edit user
+    """
+
+    authentication_classes = (BasicAuthentication,)
+    permission_classes = (IsAuthenticated,)
+
+    queryset = Users.objects.all()
+
+    lookup_url_kwarg = 'username'
+
+    def get_serializer_class(self):
+        user = Users.objects.get(username=self.request.user.username)
+
+        if user.role == 'admin':
+            return UsersSerializer
+        else:
+            return UsersSerializerBasic

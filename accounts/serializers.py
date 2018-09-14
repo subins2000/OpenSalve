@@ -33,3 +33,16 @@ class UsersSerializer(serializers.ModelSerializer):
         user.save()
 
         return user
+
+
+class UsersSerializerBasic(UsersSerializer):
+
+    class Meta:
+        model = Users
+        fields = ('password', 'email', 'name')
+
+        extra_kwargs = {
+            'password': {
+                'write_only': True
+            },
+        }
