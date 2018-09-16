@@ -40,6 +40,10 @@ class Requests(models.Model):
         default=0,
         help_text='The number of people stranded with you'
     )
+    source = models.CharField(
+        max_length=40,
+        help_text='Where this request call was obtained from',
+    )
 
     # Needs
     need_food = models.BooleanField(default=False)
