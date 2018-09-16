@@ -36,6 +36,10 @@ class Requests(models.Model):
         default=False,
         help_text='Whether this request is not made for yourself',
     )
+    number_of_people_with_you = models.IntegerField(
+        default=0,
+        help_text='The number of people stranded with you'
+    )
 
     # Needs
     need_food = models.BooleanField(default=False)
