@@ -4,10 +4,13 @@ from rest_framework.authentication import TokenAuthentication
 from rest_framework.authtoken.models import Token
 from rest_framework.generics import CreateAPIView, RetrieveUpdateAPIView
 from rest_framework.permissions import IsAuthenticated
+from rest_framework.response import Response
 from rest_framework.views import APIView
 
 from accounts.models import Users
+from accounts.permissions import IsEditable
 from accounts.serializers import UsersSerializer
+from accounts.serializers import UsersSerializerBasic
 
 
 class UsersRegister(CreateAPIView):
@@ -22,7 +25,7 @@ class UsersLogin(APIView):
     """Login user
     """
 
-    authentication_classes = (BasicAuthentication,)
+    authentication_classes = (BasicAuthentication, TokenAuthentication)
     permission_classes = (IsAuthenticated,)
 
     def get(self, request, format=None):
@@ -39,16 +42,23 @@ class UsersLogin(APIView):
         return Response(content)
 
 
-class UsersEdit(RetrieveUpdateAPIView):
-    """Edit user
+class UserInfo(RetrieveUpdateAPIView):
+    """Info of user
+    get:
+    Get info of user
+    patch:
+    Update info of user
     """
 
-    authentication_classes = (BasicAuthentication,)
-    permission_classes = (IsAuthenticated,)
+    authentication_classes = (BasicAuthentication, TokenAuthentication)
+    permission_classes = (IsAuthenticated, IsEditable)
 
-    queryset = Users.objects.all()
+    lookup_field = 'username'
 
-    lookup_url_kwarg = 'username'
+    def get_queryset(self):
+        username = self.kwargs[self.lookup_field]
+        user = Users.objects.filter(username=username)
+        return user
 
     def get_serializer_class(self):
         user = Users.objects.get(username=self.request.user.username)
