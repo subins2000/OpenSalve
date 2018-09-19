@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from help.models import Requests
+from help.models import Requests, Comments
 
 
 class RequestsSerializer(serializers.ModelSerializer):
@@ -17,3 +17,10 @@ class StatusRequestsSerializer(serializers.ModelSerializer):
 
         model = Requests
         fields = ('status',)
+
+class RequestComments(serializers.ModelSerializer):
+
+    class Meta:
+
+        model = Comments
+        fields = '__all__'
