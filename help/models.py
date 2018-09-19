@@ -1,5 +1,7 @@
 from django.db import models
 
+from accounts.models import Users
+
 
 class Requests(models.Model):
     """Apart from directly specifying lat & lng, user
@@ -53,4 +55,20 @@ class Requests(models.Model):
     status = models.CharField(
         max_length=15,
         help_text='Status of request'
+    )
+
+
+class Comments(models.Model):
+    """Comments in requests
+    """
+
+    id = models.AutoField(
+        primary_key=True,
+        help_text='Unique ID of comment',
+    )
+
+    user = models.ForeignKey(
+        Users,
+        on_delete=models.CASCADE,
+        db_column='user',
     )
