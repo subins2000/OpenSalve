@@ -23,6 +23,7 @@ class Requests(models.Model):
         max_length=60,
         help_text='Location name',
     )
+    created_at = models.DateTimeField(auto_now_add=True)
 
     # Requestee info
     name = models.CharField(
