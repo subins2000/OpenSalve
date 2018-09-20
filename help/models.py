@@ -72,3 +72,10 @@ class Comments(models.Model):
         on_delete=models.CASCADE,
         db_column='user',
     )
+
+    comment = models.CharField(
+        max_length=1000,
+        help_text='Comment text'
+    )
+
+    created_at = models.DateTimeField(auto_now_add=True)
