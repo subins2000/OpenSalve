@@ -13,6 +13,6 @@ class IsEditable(permissions.BasePermission):
             return True
 
         editing_username = view.kwargs.get(view.lookup_url_kwarg)
-        user = Users.objects.get(username=request.user.username)
+        user = User.objects.get(username=request.user.username)
 
         return user.role == 'admin' or editing_username == user.username

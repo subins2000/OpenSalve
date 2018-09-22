@@ -3,7 +3,7 @@ from rest_framework import serializers
 from accounts.models import User
 
 
-class UsersSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
 
     email = serializers.EmailField(
         allow_blank=False,
@@ -23,7 +23,7 @@ class UsersSerializer(serializers.ModelSerializer):
         }
 
     def create(self, validated_data):
-        user = Users.objects.create(
+        user = User.objects.create(
             username=validated_data['username'],
             email=validated_data['email'],
             name=validated_data['name'],
@@ -35,7 +35,7 @@ class UsersSerializer(serializers.ModelSerializer):
         return user
 
 
-class UsersSerializerBasic(UsersSerializer):
+class UserSerializerBasic(UserSerializer):
 
     class Meta:
         model = User

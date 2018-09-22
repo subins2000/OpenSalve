@@ -9,19 +9,19 @@ from rest_framework.views import APIView
 
 from accounts.models import User
 from accounts.permissions import IsEditable
-from accounts.serializers import UsersSerializer
-from accounts.serializers import UsersSerializerBasic
+from accounts.serializers import UserSerializer
+from accounts.serializers import UserSerializerBasic
 
 
-class UsersRegister(CreateAPIView):
+class UserRegister(CreateAPIView):
     """post: Register a user
     """
 
     queryset = User.objects.all()
-    serializer_class = UsersSerializer
+    serializer_class = UserSerializer
 
 
-class UsersLogin(APIView):
+class UserLogin(APIView):
     """Login user
     """
 
@@ -31,7 +31,7 @@ class UsersLogin(APIView):
     def get(self, request, format=None):
         token, created = Token.objects.get_or_create(user=request.user)
 
-        user = Users.objects.get(username=request.user.username)
+        user = User.objects.get(username=request.user.username)
 
         content = {
             'name': user.name,
@@ -57,13 +57,13 @@ class UserInfo(RetrieveUpdateAPIView):
 
     def get_queryset(self):
         username = self.kwargs[self.lookup_field]
-        user = Users.objects.filter(username=username)
+        user = User.objects.filter(username=username)
         return user
 
     def get_serializer_class(self):
-        user = Users.objects.get(username=self.request.user.username)
+        user = User.objects.get(username=self.request.user.username)
 
         if user.role == 'admin':
-            return UsersSerializer
+            return UserSerializer
         else:
-            return UsersSerializerBasic
+            return UserSerializerBasic
