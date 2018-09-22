@@ -7,4 +7,5 @@ urlpatterns = [
     # r/ Request
     path('r/<int:id>', views.RequestView.as_view()),
     path('r/<int:id>/status', views.RequestStatus.as_view()),
+    path('r/<int:id>/comments', views.RequestComments.as_view()),
 ]

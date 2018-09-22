@@ -18,7 +18,12 @@ class StatusRequestsSerializer(serializers.ModelSerializer):
         model = Requests
         fields = ('status',)
 
+
 class RequestComments(serializers.ModelSerializer):
+
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault(),
+    )
 
     class Meta:
 

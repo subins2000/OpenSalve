@@ -52,7 +52,7 @@ After cloning the repo,
     - [x] Get request complete info
     - [ ] Resolve request
     - [ ] Status of request
-    - [ ] Comments on request
+    - [x] Comments on request
     - [ ] Visualize request in maps
 
 ## API Docs
