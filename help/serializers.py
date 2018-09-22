@@ -1,5 +1,6 @@
 from rest_framework import serializers
 
+from accounts.models import User
 from help.models import Requests, Comments
 
 
@@ -24,8 +25,15 @@ class RequestComments(serializers.ModelSerializer):
     user = serializers.HiddenField(
         default=serializers.CurrentUserDefault(),
     )
+    user = serializers.SerializerMethodField()
 
     class Meta:
 
         model = Comments
         fields = '__all__'
+
+    def get_user(self, comment):
+        try:
+            return User.objects.get(pk=comment.user).username
+        except User.DoesNotExist:
+            return None
