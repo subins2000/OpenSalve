@@ -1,6 +1,6 @@
 from django.db import models
 
-from accounts.models import Users
+from django.contrib.auth.models import User
 
 
 class Requests(models.Model):
@@ -69,7 +69,7 @@ class Comments(models.Model):
     )
 
     user = models.ForeignKey(
-        Users,
+        User,
         on_delete=models.CASCADE,
         db_column='user',
     )

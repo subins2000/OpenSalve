@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from accounts.models import Users
+from accounts.models import User
 
 
 class UsersSerializer(serializers.ModelSerializer):
@@ -13,7 +13,7 @@ class UsersSerializer(serializers.ModelSerializer):
     )
 
     class Meta:
-        model = Users
+        model = User
         fields = ('username', 'password', 'email', 'name')
 
         extra_kwargs = {
@@ -38,5 +38,5 @@ class UsersSerializer(serializers.ModelSerializer):
 class UsersSerializerBasic(UsersSerializer):
 
     class Meta:
-        model = Users
+        model = User
         fields = ('email', 'name')

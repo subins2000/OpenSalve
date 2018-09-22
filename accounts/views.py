@@ -7,7 +7,7 @@ from rest_framework.permissions import IsAuthenticated
 from rest_framework.response import Response
 from rest_framework.views import APIView
 
-from accounts.models import Users
+from accounts.models import User
 from accounts.permissions import IsEditable
 from accounts.serializers import UsersSerializer
 from accounts.serializers import UsersSerializerBasic
@@ -17,7 +17,7 @@ class UsersRegister(CreateAPIView):
     """post: Register a user
     """
 
-    queryset = Users.objects.all()
+    queryset = User.objects.all()
     serializer_class = UsersSerializer
 
 
