@@ -19,6 +19,11 @@ class RequestsStatusSerializer(serializers.ModelSerializer):
         model = Requests
         fields = ('status',)
 
+    def validate_status(self, status):
+        if (status not in ['pending', 'resolved']):
+            raise serializers.ValidationError('Invalid status value')
+        return status
+
 
 class RequestComments(serializers.ModelSerializer):
 
