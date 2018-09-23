@@ -12,7 +12,7 @@ class RequestsSerializer(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class StatusRequestsSerializer(serializers.ModelSerializer):
+class RequestsStatusSerializer(serializers.ModelSerializer):
 
     class Meta:
 

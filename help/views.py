@@ -3,7 +3,7 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 from help.models import Requests, Comments
 from help.permissions import IsVolunteer
-from help.serializers import StatusRequestsSerializer, RequestsSerializer
+from help.serializers import RequestsStatusSerializer, RequestsSerializer
 from help.serializers import RequestComments
 
 
@@ -31,7 +31,7 @@ class RequestStatus(generics.RetrieveUpdateAPIView):
     patch:
     Set status of request
     """
-    serializer_class = StatusRequestsSerializer
+    serializer_class = RequestsStatusSerializer
 
     lookup_url_kwarg = 'id'
 
