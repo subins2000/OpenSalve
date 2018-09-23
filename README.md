@@ -50,8 +50,8 @@ After cloning the repo,
 - [ ] Help Requests
     - [x] Register request
     - [x] Get request complete info
-    - [ ] Resolve request
-    - [ ] Status of request
+    - [x] Resolve request
+    - [x] Status of request
     - [x] Comments on request
     - [ ] Visualize request in maps
 
