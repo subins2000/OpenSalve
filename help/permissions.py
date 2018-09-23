@@ -12,6 +12,6 @@ class IsVolunteer(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
-        user = Users.objects.get(username=request.user.username)
+        user = User.objects.get(username=request.user.username)
 
-        return user.role == 'volunteer'
+        return user.role == 'volunteer' or user.role == 'admin'
