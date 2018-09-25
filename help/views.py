@@ -4,7 +4,7 @@ from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 from help.models import Requests, Comments
 from help.permissions import IsVolunteer
 from help.serializers import RequestsStatusSerializer, RequestsSerializer
-from help.serializers import RequestComments
+from help.serializers import RequestCommentsRead, RequestCommentsWrite
 
 
 class RequestAdd(generics.CreateAPIView):
@@ -59,4 +59,9 @@ class RequestComments(generics.ListCreateAPIView):
     )
 
     queryset = Comments.objects.all()
-    serializer_class = RequestComments
+
+    def get_serializer_class(self):
+        if self.request.method == 'POST':
+            return RequestCommentsWrite
+
+        return RequestCommentsRead

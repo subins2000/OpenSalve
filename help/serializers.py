@@ -25,11 +25,8 @@ class RequestsStatusSerializer(serializers.ModelSerializer):
         return status
 
 
-class RequestComments(serializers.ModelSerializer):
+class RequestCommentsRead(serializers.ModelSerializer):
 
-    user = serializers.HiddenField(
-        default=serializers.CurrentUserDefault(),
-    )
     user = serializers.SerializerMethodField()
 
     class Meta:
@@ -42,3 +39,15 @@ class RequestComments(serializers.ModelSerializer):
             return User.objects.get(pk=comment.user).username
         except User.DoesNotExist:
             return None
+
+
+class RequestCommentsWrite(serializers.ModelSerializer):
+
+    user = serializers.HiddenField(
+        default=serializers.CurrentUserDefault(),
+    )
+
+    class Meta:
+
+        model = Comments
+        fields = '__all__'
