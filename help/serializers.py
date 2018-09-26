@@ -11,6 +11,21 @@ class RequestsSerializer(serializers.ModelSerializer):
         model = Requests
         fields = '__all__'
 
+    def validate_source(self, source):
+        sources = [
+            None,
+            'me',
+            'fb',
+            'wa',
+            'insta',
+            'call',
+        ]
+
+        if (source not in sources):
+            raise serializers.ValidationError('Invalid source value')
+
+        return source
+
 
 class RequestsStatusSerializer(serializers.ModelSerializer):
 
