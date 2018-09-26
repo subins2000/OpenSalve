@@ -54,7 +54,7 @@ After cloning the repo,
     - [x] Status of request
     - [x] Comments on request
     - [ ] Visualize request in maps
-    - [ ] Editing requests
+    - [x] Editing requests
     - [ ] Prioritizing Requests
 
 ## API Docs
