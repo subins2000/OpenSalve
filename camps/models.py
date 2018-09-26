@@ -1,6 +1,7 @@
 from django.db import models
 from django.contrib.auth.models import User
 
+
 class Camp(models.Model):
     id = models.AutoField(
         primary_key=True,
@@ -19,14 +20,16 @@ class Camp(models.Model):
         help_text='Location name',
     )
 
-    admin = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
-
+    user = models.ForeignKey(
+        User,
+        on_delete=models.CASCADE,
+        db_column='user',
+    )
 
     capacity = models.IntegerField(
-        help_text='The max capacity of the camp'        
+        help_text='The max capacity of the camp'
     )
     number_of_people = models.IntegerField(
         default=0,
         help_text='The number of people currently in the camp'
     )
-
