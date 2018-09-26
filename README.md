@@ -56,6 +56,12 @@ After cloning the repo,
     - [ ] Visualize request in maps
     - [x] Editing requests
     - [ ] Prioritizing Requests
+- [ ] Camps
+    - [x] Add & List
+    - [ ] Camp requirements
+- [ ] Collection Centres
+    - [ ] Add & List
+    - [ ] Supplies required
 
 ## API Docs
 
