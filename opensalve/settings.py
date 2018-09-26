@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'accounts',
     'help',
     'camps',
+    'collectioncentres',
 ]
 
 MIDDLEWARE = [
