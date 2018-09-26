@@ -7,8 +7,16 @@ from help.serializers import RequestsStatusSerializer, RequestsSerializer
 from help.serializers import RequestCommentsRead, RequestCommentsWrite
 
 
-class RequestAdd(generics.CreateAPIView):
+class Request(generics.ListCreateAPIView):
+    """Get/Add request
+    get:
+    Get all requests
+    post:
+    Add a request
+    """
+
     serializer_class = RequestsSerializer
+    queryset = Requests.objects.all()
 
 
 class RequestView(generics.RetrieveUpdateAPIView):
