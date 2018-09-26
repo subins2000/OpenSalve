@@ -2,7 +2,7 @@ from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
 from help.models import Requests, Comments
-from help.permissions import IsVolunteer
+from help.permissions import IsVolunteer, IsPhoneAuthenticated
 from help.serializers import RequestsStatusSerializer, RequestsSerializer
 from help.serializers import RequestCommentsRead, RequestCommentsWrite
 
@@ -11,12 +11,16 @@ class RequestAdd(generics.CreateAPIView):
     serializer_class = RequestsSerializer
 
 
-class RequestView(generics.RetrieveAPIView):
+class RequestView(generics.RetrieveUpdateAPIView):
     """Get info about a help request
     """
     serializer_class = RequestsSerializer
 
     lookup_url_kwarg = 'id'
+
+    permission_classes = (
+        IsPhoneAuthenticated,
+    )
 
     def get_queryset(self):
         id = self.kwargs.get(self.lookup_url_kwarg)
