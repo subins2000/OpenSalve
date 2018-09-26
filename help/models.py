@@ -22,6 +22,7 @@ class Requests(models.Model):
         help_text='Longitude',
     )
     location = models.CharField(
+        blank=True,
         max_length=60,
         help_text='Location name',
     )
@@ -29,6 +30,7 @@ class Requests(models.Model):
 
     # Requestee info
     name = models.CharField(
+        blank=True,
         max_length=50,
         help_text='Name of requestee',
     )
@@ -57,6 +59,7 @@ class Requests(models.Model):
     need_rescue = models.BooleanField(default=False)
 
     status = models.CharField(
+        blank=True,
         max_length=15,
         help_text='Status of request'
     )
