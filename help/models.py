@@ -12,10 +12,12 @@ class Requests(models.Model):
         help_text='Unique ID of request',
     )
     lat = models.CharField(
+        blank=True,
         max_length=20,
         help_text='Latitude',
     )
     lng = models.CharField(
+        blank=True,
         max_length=20,
         help_text='Longitude',
     )
@@ -44,6 +46,7 @@ class Requests(models.Model):
         help_text='The number of people stranded with you'
     )
     source = models.CharField(
+        blank=True,
         max_length=40,
         help_text='Where this request call was obtained from',
     )
