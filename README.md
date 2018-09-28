@@ -60,7 +60,7 @@ After cloning the repo,
     - [x] Add & List
     - [ ] Camp requirements
 - [ ] Collection Centres
-    - [ ] Add & List
+    - [x] Add & List
     - [ ] Supplies required
 
 ## API Docs
