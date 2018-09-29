@@ -56,6 +56,7 @@ After cloning the repo,
     - [ ] Visualize request in maps
     - [x] Editing requests
     - [ ] Prioritizing Requests
+    - [ ] Live location with GPS
 - [ ] Camps
     - [x] Add & List
     - [ ] Camp requirements
