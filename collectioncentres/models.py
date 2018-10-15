@@ -25,3 +25,5 @@ class CollectionCentre(models.Model):
         on_delete=models.CASCADE,
         db_column='user',
     )
+    def __str__(self):
+        return self.location
