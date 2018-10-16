@@ -33,3 +33,6 @@ class Camp(models.Model):
         default=0,
         help_text='The number of people currently in the camp'
     )
+
+    def __str__(self):
+        return self.location
