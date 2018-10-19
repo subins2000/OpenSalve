@@ -1,6 +1,6 @@
 from rest_framework import serializers
 
-from camps.models import Camp
+from camps.models import Camps
 
 
 class CampsSerializer(serializers.ModelSerializer):
@@ -11,5 +11,5 @@ class CampsSerializer(serializers.ModelSerializer):
 
     class Meta:
 
-        model = Camp
+        model = Camps
         fields = '__all__'

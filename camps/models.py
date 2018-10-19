@@ -2,7 +2,7 @@ from django.db import models
 from django.contrib.auth.models import User
 
 
-class Camp(models.Model):
+class Camps(models.Model):
     id = models.AutoField(
         primary_key=True,
         help_text='Unique ID of the camp',
