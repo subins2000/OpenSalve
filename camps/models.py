@@ -26,6 +26,21 @@ class Camps(models.Model):
         db_column='user',
     )
 
+    incharge = models.CharField(
+        max_length=40,
+        help_text='Camp incharge',
+    )
+    phone = models.CharField(
+        max_length=15,
+        help_text='Camp phone number'
+    )
+
+    photo = models.ImageField(
+        blank=True,
+        null=True,
+        upload_to='camps/%Y/%m/%d/'
+    )
+
     capacity = models.IntegerField(
         help_text='The max capacity of the camp'
     )
