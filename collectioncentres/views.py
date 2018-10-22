@@ -6,7 +6,7 @@ from collectioncentres.serializers import *
 from help.permissions import IsVolunteer
 
 
-class CollectionCentre(generics.ListCreateAPIView):
+class CollectionCentreList(generics.ListCreateAPIView):
     """Get/Add collection centre
     get:
     Get all collection centres
