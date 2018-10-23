@@ -1,8 +1,8 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAdminUser, IsAuthenticatedOrReadOnly
 
-from camps.models import Camps
-from camps.serializers import CampsSerializer
+from camps.models import Camps, CampInhabitants
+from camps.serializers import CampsSerializer, CampInhabitantsSerializer
 from help.permissions import IsVolunteer
 
 
@@ -33,4 +33,28 @@ class CampView(generics.RetrieveAPIView):
     def get_queryset(self):
         id = self.kwargs.get(self.lookup_url_kwarg)
         camp = Camps.objects.filter(id=id)
+        return camp
+
+
+class CampInhabitants(generics.ListCreateAPIView):
+    """Get/Add inhabitant
+    get:
+    Get all inhabitants in camp
+    post:
+    Add a inhabitant to camp
+    """
+
+    serializer_class = CampInhabitantsSerializer
+    lookup_url_kwarg = 'id'
+
+    def get_serializer_context(self):
+        context = super(generics.ListCreateAPIView, self).get_serializer_context()
+        context.update({
+            'camp_id': self.kwargs.get(self.lookup_url_kwarg)
+        })
+        return context
+
+    def get_queryset(self):
+        id = self.kwargs.get(self.lookup_url_kwarg)
+        camp = CampInhabitants.objects.filter(camp=id)
         return camp
