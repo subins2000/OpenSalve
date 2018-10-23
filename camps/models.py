@@ -51,3 +51,23 @@ class Camps(models.Model):
 
     def __str__(self):
         return self.location
+
+
+class CampInhabitants(models.Model):
+
+    camp = models.ForeignKey(
+        Camps,
+        on_delete=models.CASCADE,
+    )
+    name = models.CharField(
+        max_length=100,
+        help_text='Name of person',
+    )
+    location = models.CharField(
+        max_length=100,
+        help_text='Original place of person',
+    )
+    blood_group = models.CharField(
+        max_length=5,
+        help_text='Blood group of person',
+    )
