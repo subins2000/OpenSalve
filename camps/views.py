@@ -23,7 +23,7 @@ class Camp(generics.ListCreateAPIView):
     queryset = Camps.objects.all()
 
 
-class ViewCamp(generics.RetrieveAPIView):
+class CampView(generics.RetrieveAPIView):
     """Get info about a camp
     """
     serializer_class = CampsSerializer
