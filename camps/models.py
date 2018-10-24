@@ -58,6 +58,7 @@ class CampInhabitants(models.Model):
     camp = models.ForeignKey(
         Camps,
         on_delete=models.CASCADE,
+        db_column='camp',
     )
     name = models.CharField(
         max_length=100,
