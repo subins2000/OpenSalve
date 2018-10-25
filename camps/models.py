@@ -72,3 +72,6 @@ class CampInhabitants(models.Model):
         max_length=5,
         help_text='Blood group of person',
     )
+
+    def __str__(self):
+        return self.name

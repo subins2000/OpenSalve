@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import Camps
+from .models import Camps, CampInhabitants
 
 admin.site.register(Camps)
-# Register your models here.
+admin.site.register(CampInhabitants)
