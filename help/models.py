@@ -54,16 +54,27 @@ class Requests(models.Model):
     )
 
     # Needs
-    need_food = models.BooleanField(default=False)
-    need_medicine = models.BooleanField(default=False)
+    need_food_water = models.BooleanField(default=False)
+    need_first_aid = models.BooleanField(default=False)
     need_rescue = models.BooleanField(default=False)
-    need_water = models.BooleanField(default=False)
+    need_transport = models.BooleanField(default=False)
+    need_medical = models.BooleanField(default=False)
 
     status = models.CharField(
         blank=True,
-        max_length=15,
+        max_length=50,
+        default='No teams have responded',
         help_text='Status of request'
     )
+
+    desc = models.CharField(
+        blank=True,
+        max_length=200,
+        help_text='Further description'
+    )
+
+    def __str__(self):
+        return self.name
 
 
 class Comments(models.Model):
