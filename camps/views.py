@@ -36,7 +36,7 @@ class CampView(generics.RetrieveAPIView):
         return camp
 
 
-class CampInhabitants(generics.ListCreateAPIView):
+class CampInhabitantsView(generics.ListCreateAPIView):
     """Get/Add inhabitant
     get:
     Get all inhabitants in camp
@@ -48,7 +48,8 @@ class CampInhabitants(generics.ListCreateAPIView):
     lookup_url_kwarg = 'id'
 
     def get_serializer_context(self):
-        context = super(generics.ListCreateAPIView, self).get_serializer_context()
+        context = super(generics.ListCreateAPIView,
+                        self).get_serializer_context()
         context.update({
             'camp_id': self.kwargs.get(self.lookup_url_kwarg)
         })
