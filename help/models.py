@@ -63,7 +63,7 @@ class Requests(models.Model):
     status = models.CharField(
         blank=True,
         max_length=50,
-        default='No teams have responded',
+        blank=True,
         help_text='Status of request'
     )
 
