@@ -63,7 +63,6 @@ class Requests(models.Model):
     status = models.CharField(
         blank=True,
         max_length=50,
-        blank=True,
         help_text='Status of request'
     )
 
