@@ -60,9 +60,13 @@ After cloning the repo,
 - [ ] Camps
     - [x] Add & List
     - [ ] Camp requirements
+    - [ ] Inhabitants
+        - [ ] Allow camp manager to add
 - [ ] Collection Centres
     - [x] Add & List
     - [ ] Supplies required
+        - [ ] List quantity, unit
+    - [ ] Stock view
 
 ## API Docs
 
