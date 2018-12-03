@@ -35,7 +35,7 @@ class RequestsStatusSerializer(serializers.ModelSerializer):
         fields = ('status',)
 
     def validate_status(self, status):
-        if (status not in ['pending', 'resolved']):
+        if (status not in ['pending', 'inprogress', 'resolved']):
             raise serializers.ValidationError('Invalid status value')
         return status
 
