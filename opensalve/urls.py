@@ -40,6 +40,7 @@ urlpatterns = [
     path('api/help/', include('help.urls')),
     path('api/camps/', include('camps.urls')),
     path('api/collectioncentres/', include('collectioncentres.urls')),
+    path('api/news/', include('news.urls')),
     url(
         '^docs/$',
         schema_view.with_ui('swagger', cache_timeout=0),
