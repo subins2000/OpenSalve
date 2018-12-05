@@ -28,6 +28,8 @@ class IsPhoneAuthenticated(permissions.BasePermission):
         if request.method in permissions.SAFE_METHODS:
             return True
 
+        return True
+
         editing_id = view.kwargs.get(view.lookup_url_kwarg)
         editing_request = Requests.objects.get(id=editing_id)
 
