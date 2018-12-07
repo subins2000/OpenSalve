@@ -47,13 +47,9 @@ class CampInhabitantsView(generics.ListCreateAPIView):
     serializer_class = CampInhabitantsSerializer
     lookup_url_kwarg = 'id'
 
-    def get_serializer_context(self):
-        context = super(generics.ListCreateAPIView,
-                        self).get_serializer_context()
-        context.update({
-            'camp_id': self.kwargs.get(self.lookup_url_kwarg)
-        })
-        return context
+    def perform_create(self, serializer):
+        id = self.kwargs.get(self.lookup_url_kwarg)
+        serializer.save(camp=Camps.objects.get(id=id))
 
     def get_queryset(self):
         id = self.kwargs.get(self.lookup_url_kwarg)

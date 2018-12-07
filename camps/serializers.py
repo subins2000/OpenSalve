@@ -17,16 +17,15 @@ class CampsSerializer(serializers.ModelSerializer):
 
 class CampInhabitantsSerializer(serializers.ModelSerializer):
 
-    camp = serializers.HiddenField(
-        default=''
-    )
+    camp = serializers.SerializerMethodField()
 
     class Meta:
 
         model = CampInhabitants
         fields = '__all__'
 
-    def validate_camp(self, camp):
-        self.camp = serializers.HiddenField(
-            default=self.context.get('camp_id')
-        )
+    def validate_camp(self, value):
+        return Camps.objects.get(id=self.request.id)
+
+    def get_camp(self, camp):
+        return camp.id

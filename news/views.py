@@ -22,3 +22,6 @@ class NewsView(generics.ListCreateAPIView):
 
     serializer_class = NewsSerializer
     queryset = News.objects.all()
+
+    def perform_create(self, serializer):
+        serializer.save(user=self.request.user)
