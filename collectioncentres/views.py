@@ -35,6 +35,13 @@ class CollectionCentreView(generics.RetrieveAPIView):
         collection_centre = CollectionCentre.objects.filter(id=id)
         return collection_centre
 
+    def get_serializer_context(self):
+        id = self.kwargs.get(self.lookup_url_kwarg)
+        return {
+            'collection_centre_id': id,
+            'request': self.request
+        }
+
 
 class CollectionCentreStockView(generics.ListCreateAPIView):
     """Get info about stock in a collection centre
