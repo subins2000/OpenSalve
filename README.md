@@ -4,36 +4,31 @@
 
 After cloning the repo,
 
-* Setup [`virtualenvwrapper`](https://virtualenvwrapper.readthedocs.io/en/latest/)
+* Setup [`pipenv`](https://pipenv.readthedocs.io/en/latest/)
 * With the repo folder as the present working directory, setup the environment :
   ```bash
-  export VIRTUALENVWRAPPER_PYTHON=/usr/bin/python3
-  source ~/.local/bin/virtualenvwrapper.sh # Better add this to .bashrc
-  mkvirtualenv opensalve
-  rm $VIRTUAL_ENV/bin/postactivate
-  ln -s `realpath .env/postactivate` $VIRTUAL_ENV/bin/postactivate
+  pipenv install
   ```
-* Edit file `.env/postactivate` and set `SECRET_KEY`, database config
 * Activate environment :
   ```bash
-  source ~/.local/bin/virtualenvwrapper.sh # Better add this to .bashrc
-  workon opensalve
+  pipenv shell
   ```
-* Install dependencies (`pip install Django djangorestframework drf-yasg flex swagger_spec_validator`) :
-  ```bash
-  pip install -r requirements.txt
+* Open file `.env` and set secret key :
   ```
-* Open file `.env/bin/postactivate` and set secret key :
-  ```bash
-  export DJANGO_SECRET_KEY='a_random_key_here'
+  DJANGO_SECRET_KEY='random stuff here...'
+  ```
+  For this very purpose, one could use the following code.
+  ```python
+  import random
+  "".join([random.SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(96)])
   ```
 * Migrate :
   ```bash
-  python3 manage.py makemigrations && python3 manage.py migrate
+  python manage.py makemigrations && python manage.py migrate
   ```
 * Start server :
   ```bash
-  python3 manage.py runserver
+  python manage.py runserver
   ```
 
 ## Contributing
