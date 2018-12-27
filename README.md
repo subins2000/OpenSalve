@@ -9,10 +9,6 @@ After cloning the repo,
   ```bash
   pipenv install
   ```
-* Activate environment :
-  ```bash
-  pipenv shell
-  ```
 * Open file `.env` and set secret key :
   ```
   DJANGO_SECRET_KEY='random stuff here...'
@@ -21,6 +17,10 @@ After cloning the repo,
   ```python
   import random
   "".join([random.SystemRandom().choice('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789!@#$%^&*(-_=+)') for i in range(96)])
+  ```
+* Activate environment :
+  ```bash
+  pipenv shell
   ```
 * Migrate :
   ```bash
