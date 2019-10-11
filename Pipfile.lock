@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "d15fb116e9a60717540811ef0c937795b4faf7abecc2ba52853766cb3baab2f8"
+            "sha256": "7ac79e3726ef5be944829cccafdec50f4f5a0eba24b81fde4ca1a928ebb18c33"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -96,11 +96,11 @@
         },
         "djangorestframework": {
             "hashes": [
-                "sha256:b6714c3e4b0f8d524f193c91ecf5f5450092c2145439ac2769711f7eba89a9d9",
-                "sha256:c375e4f95a3a64fccac412e36fb42ba36881e52313ec021ef410b40f67cddca4"
+                "sha256:5488aed8f8df5ec1d70f04b2114abc52ae6729748a176c453313834a9ee179c8",
+                "sha256:dc81cbf9775c6898a580f6f1f387c4777d12bd87abf0f5406018d32ccae71090"
             ],
             "index": "pypi",
-            "version": "==3.8.2"
+            "version": "==3.10.3"
         },
         "drf-yasg": {
             "hashes": [
@@ -423,11 +423,11 @@
         },
         "urllib3": {
             "hashes": [
-                "sha256:a68ac5e15e76e7e5dd2b8f94007233e01effe3e50e8daddf69acfd81cb686baf",
-                "sha256:b5725a0bd4ba422ab0e66e89e030c806576753ea3ee08554382c14e685d117b5"
+                "sha256:2393a695cd12afedd0dcb26fe5d50d0cf248e5a66f75dbd89a3d4eb333a61af4",
+                "sha256:a637e5fae88995b256e3409dc4d52c2e2e0ba32c42a6365fee8bbd2238de3cfb"
             ],
             "index": "pypi",
-            "version": "==1.23"
+            "version": "==1.24.3"
         },
         "validate-email": {
             "hashes": [

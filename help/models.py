@@ -85,6 +85,13 @@ class Comments(models.Model):
         help_text='Unique ID of comment',
     )
 
+    request = models.ForeignKey(
+        Requests,
+        on_delete=models.CASCADE,
+        db_column='request',
+        help_text='The request to which this comment is made',
+    )
+
     user = models.ForeignKey(
         User,
         on_delete=models.CASCADE,
