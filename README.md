@@ -1,5 +1,7 @@
 # OpenSalve
 
+2019 October 16 : **OpenSalve is now part of rebuildearth project. The repo has been [moved to GitLab](https://gitlab.com/rebuildearth/OpenSalve).**. See also the devsprint [openhack.tech](https://openhack.tech) where we further develop OpenSalve
+
 ## Setup
 
 After cloning the repo,
